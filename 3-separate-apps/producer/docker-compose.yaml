@@ -1,0 +1,6 @@
+version: "3"
+services:
+  producer:
+    image: com.vuba/kafka-producer:0.0.1
+    build:
+      context: .

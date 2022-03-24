@@ -1,0 +1,15 @@
+spring:
+  #  this part of code is needed for swagger to run
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  kafka:
+    enabled: true
+    bootstrap-servers: ${kafka.server.url:localhost:9092}
+    producer:
+      client-id: kafka-message-producer
+      acks: all
+      value-seriliazer: org.apache.kafka.common.serialization.StringSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topic:
+      simple-message-topic: ${kafka.topic:simple-message-topic}
