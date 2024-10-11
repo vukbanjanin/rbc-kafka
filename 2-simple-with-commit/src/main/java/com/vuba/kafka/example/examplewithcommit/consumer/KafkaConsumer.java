@@ -25,7 +25,8 @@ public class KafkaConsumer {
         LOG.info("[KAFKA-CONSUMER] received message");
         var simpleMessage = deserializeSimpleMessage(record);
         LOG.info("[KAFKA-CONSUMER] contents of message: [{}]", simpleMessage);
-        causeNPE();
+        //TODO: uncomment this to see the loop start
+//        causeNPE();
         acknowledgment.acknowledge();
         LOG.info("[KAFKA-CONSUMER] acknowledged message");
     }
